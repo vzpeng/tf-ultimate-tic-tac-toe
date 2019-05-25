@@ -10,6 +10,10 @@ class Field:
     __myId = 0
     __opponentId = 0
 
+    """
+    Class that tracks state of the game board
+    """
+
     def __init__(self):
         null_row = []
         for col in range(self.__NUM_COLS):
@@ -185,10 +189,15 @@ class BotState:
     def getTimePerMove(self):
         return self.__TIME_PER_MOVE
 
+
 class BotParser:
     __bot = None
     __currentState = None
     __log = None
+
+    """
+    I/O Interface b/w Bot and Game Engine.
+    """
 
     def __init__(self, bot):
         self.__bot = bot
@@ -199,7 +208,6 @@ class BotParser:
         self.__log.write("Sending: " + msg + " to stdout.")
         print(msg)
         sys.stdout.flush()
-
 
     def run(self):
         while not sys.stdin.closed:

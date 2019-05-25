@@ -13,6 +13,11 @@ def go():
 
 
 class BotStarter:
+    """
+
+    Bot class. Logic for moves to be added in doMove().
+    """
+
     def __init__(self):
         random.seed()
         
